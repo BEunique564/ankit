@@ -1,0 +1,31 @@
+<!DOCTYPE html><html>
+<head>
+  <title>AR Perfect Coaching - Admission Form</title>
+  <style>
+    body { font-family: Arial; text-align: center; padding: 50px; background: #f0f0f0; }
+    form { background: white; padding: 20px; border-radius: 10px; display: inline-block; }
+    input, textarea { width: 90%; padding: 10px; margin: 10px 0; border-radius: 5px; border: 1px solid #ccc; }
+    button { padding: 10px 20px; background: green; color: white; border: none; border-radius: 5px; font-size: 16px; cursor: pointer; }
+  </style>
+</head>
+<body>
+  <h2>AR Perfect Coaching Admission Form</h2>
+  <p>Fill in your details below if you are interested in joining our coaching.</p>
+  <form onsubmit="sendToWhatsApp(); return false;">
+    <input type="text" id="name" placeholder="Your Full Name" required><br>
+    <input type="tel" id="phone" placeholder="Your Mobile Number" required><br>
+    <textarea id="message" placeholder="Course or Subject you want to study" required></textarea><br>
+    <button type="submit">Submit & Contact via WhatsApp</button>
+  </form>  <script>
+    function sendToWhatsApp() {
+      var name = document.getElementById("name").value;
+      var phone = document.getElementById("phone").value;
+      var message = document.getElementById("message").value;
+
+      var url = "https://wa.me/919118162095?text=" +
+        encodeURIComponent("New Coaching Admission Inquiry\nName: " + name + "\nPhone: " + phone + "\nInterested In: " + message);
+
+      window.open(url, '_blank').focus();
+    }
+  </script></body>
+</html>
